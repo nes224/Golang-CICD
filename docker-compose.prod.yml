@@ -1,7 +1,6 @@
 version: '3'
 services:
-  golang-cicd:
-    container_name: golang-api
+  golang-add:
     build:
       context: .
       dockerfile: Dockerfile 

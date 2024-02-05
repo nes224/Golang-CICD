@@ -12,4 +12,5 @@ func main() {
 	router.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{"status": "success", "message": "dev"})
 	})
+	server.Run(":" + "8000")
 }

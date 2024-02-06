@@ -38,6 +38,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ vars.EC2_INSTANCE }} << EOF
         mkdir -p /home/ec2-user/golang-app
         cd /home/ec2-user/golang-app
+        sudo su
         ${{ secrets.LOGIN_AWS_ECR }}
         docker pull ${{ vars.URL }}/:latest
         docker run -d -p 8000:8000 --name golang-app-container ${{vars.URL}}

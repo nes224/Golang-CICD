@@ -7,3 +7,4 @@ RUN go install github.com/cosmtrek/air@latest
 COPY . .
 RUN go build -o main . 
 EXPOSE 8000
+CMD ["air","./app/main.go","-b","0.0.0.0"]

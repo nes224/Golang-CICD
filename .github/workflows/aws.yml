@@ -41,7 +41,7 @@ jobs:
         - name: Copy SSH key
           run: |
             mkdir -p ~/.ssh
-            echo "$(echo "${{ secrets.SSH_PRIVATE_KEY_DEV }}")" > ~/.ssh/id_rsa
+            echo "$(echo "${{ vars.SSH_PRIVATE_KEY_DEV }}")" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
         - name : Debug SSH Key
           run: |

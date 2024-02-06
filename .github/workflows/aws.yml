@@ -45,11 +45,11 @@ jobs:
             chmod 600 ~/.ssh/id_rsa
         - name : Debug SSH Key
           run: |
-            echo "SSH KEY contents: $(cat ~/.ssh/id_rsa)"
+            echo "SSH KEY contents: $(cat ~/.ssh/id_rsa)" 
         
         - name: Deploy to EC2
           run: |
-            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_PRIVATE_KEY_DEV }} << EOF
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.EC2_INSTANCE }} << EOF
             mkdir -p /home/ec2-user/golang-app
             cd /home/ec2-user/golang-app
             ${{ secrets.LOGIN_AWS_ECR }}

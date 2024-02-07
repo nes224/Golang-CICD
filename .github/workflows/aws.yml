@@ -52,5 +52,5 @@ jobs:
         sudo su
         ${{ secrets.LOGIN_AWS_ECR }}
         docker pull ${{ vars.URL }}/:latest
-        docker run -d -p 8000:8000 --name golang-app-container ${{vars.URL}}
+        docker run -d -p 80:8000 --name golang-app-container ${{vars.URL}}
         EOF

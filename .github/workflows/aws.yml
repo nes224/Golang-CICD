@@ -51,6 +51,7 @@ jobs:
         cd /home/ec2-user/golang-app
         sudo su
         ${{ secrets.LOGIN_AWS_ECR }}
+        docker rm -f golang-app-container
         docker pull ${{ vars.URL }}/:latest
         docker run -d -p 80:8000 --name golang-app-container ${{vars.URL}}
         EOF

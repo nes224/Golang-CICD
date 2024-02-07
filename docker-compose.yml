@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile 
     ports:
-      - "80:80"
+      - "80:8000"
     volumes:
       - .:/app
     command: air ./app/main.go -b 0.0.0.0

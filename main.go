@@ -38,7 +38,7 @@ func main() {
 	server := gin.Default()
 	router := server.Group("/api")
 	router.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{"status": "success", "message": config.Mode})
+		ctx.JSON(http.StatusOK, gin.H{"status": 200, "message": config.Mode})
 	})
 	server.Run(":" + "8000")
 }

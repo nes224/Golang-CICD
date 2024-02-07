@@ -6,5 +6,5 @@ RUN apk add --update --no-cache bash git openssh
 RUN go install github.com/cosmtrek/air@latest
 COPY . .
 RUN go build -o main . 
-EXPOSE 8000
+EXPOSE 80
 CMD ["air","./app/main.go","-b","0.0.0.0"]

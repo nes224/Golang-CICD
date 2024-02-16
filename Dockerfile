@@ -7,4 +7,8 @@ RUN go install github.com/cosmtrek/air@latest
 COPY . .
 RUN go build -o main . 
 EXPOSE 8000
+
+HEALTHCHECK --interval=12s --timeout=12s --start-period=30s --retries=3 \
+    CMD curl -fail http://localhost:8000/api/ || exit 1
+
 CMD ["air","./app/main.go","-b","0.0.0.0"]

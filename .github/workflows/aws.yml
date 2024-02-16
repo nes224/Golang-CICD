@@ -54,5 +54,5 @@ jobs:
         docker rm -f golang-app-container
         docker rmi -f ${{vars.URL}}
         docker pull ${{ vars.URL }}/:latest
-        docker run -d -p 80:8000 --name golang-app-container ${{vars.URL}}
+        docker run -d -p 80:8000 --restart=always --name golang-app-container ${{vars.URL}}
         EOF
